@@ -1,0 +1,93 @@
+.navbar {
+  height: 50px;
+  display: flex;
+  border-right: 0.5px solid rgb(230, 227, 227);
+  align-items: center;
+  font-size: 14px;
+  color: #57606f;
+  &Wrapper {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &Search {
+    display: flex;
+    align-items: center;
+    border: 0.5px solid #a4b0be;
+    padding: 3px;
+    border-radius: 5px;
+    input {
+      border: none;
+      outline: none;
+      background: transparent;
+      &::placeholder {
+        font-size: 13px;
+      }
+    }
+
+    .searchIcon {
+      color: #57606f;
+      cursor: pointer;
+      &:hover {
+        color: #ff6b81;
+      }
+    }
+  }
+
+  &Items {
+    display: flex;
+    align-items: center;
+    .item {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      position: relative;
+      .icon {
+        font-size: 20px;
+      }
+
+      .click {
+        cursor: pointer;
+        &:hover {
+          color: #ff6b81;
+        }
+      }
+
+      .counter {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 15px;
+        height: 15px;
+        font-size: 12px;
+        background-color: #ff4757;
+        color: #fff;
+        border-radius: 50%;
+      }
+
+      span {
+        margin-left: 5px;
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: capitalize;
+        color: #57606f;
+        cursor: pointer;
+        &:hover {
+          color: #ff6b81;
+        }
+      }
+    }
+
+    .avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+  }
+}
