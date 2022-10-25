@@ -8,6 +8,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 11px;
+    border-bottom: 0.5px solid rgb(230, 227, 227);
 
     a {
       text-decoration: none;
@@ -18,11 +20,6 @@
       font-size: 1rem;
       color: #ff6b81;
     }
-  }
-
-  hr {
-    border-right: 0.5px solid rgb(230, 227, 227);
-    height: 0;
   }
 
   &Center {

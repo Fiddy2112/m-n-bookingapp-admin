@@ -9,10 +9,34 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import "./Navbar.scss";
 
 function Navbar() {
-  const [fullscreen, setFullscreen] = useState("F11");
-  const handleFullscreen = (e) => {
-    if (e.key === "F11") {
-      setFullscreen(!fullscreen);
+  const [fullscreen, setFullscreen] = useState(false);
+  const handleFullscreen = () => {
+    const elem = document.getElementById("root");
+    console.log(elem);
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+      setFullscreen(true);
+    } else if (elem.webkitRequestFullscreen) {
+      /* Safari */
+      elem.webkitRequestFullscreen();
+      setFullscreen(true);
+    } else if (elem.msRequestFullscreen) {
+      /* IE11 */
+      elem.msRequestFullscreen();
+      setFullscreen(true);
+    }
+
+    if (elem.exitFullscreen) {
+      elem.exitFullscreen();
+      setFullscreen(false);
+    } else if (elem.webkitExitFullscreen) {
+      /* Safari */
+      elem.webkitExitFullscreen();
+      setFullscreen(false);
+    } else if (elem.msExitFullscreen) {
+      /* IE11 */
+      elem.msExitFullscreen();
+      setFullscreen(false);
     }
   };
   console.log(fullscreen);
@@ -29,10 +53,17 @@ function Navbar() {
             <span>English</span>
           </div>
           <div className="item">
-            <FullscreenExitOutlinedIcon
-              className="icon click"
-              onClick={(e) => setFullscreen(e.key === fullscreen)}
-            />
+            {fullscreen ? (
+              <FullscreenExitOutlinedIcon
+                className="icon click"
+                onClick={() => handleFullscreen()}
+              />
+            ) : (
+              <FullscreenOutlinedIcon
+                className="icon click"
+                onClick={() => handleFullscreen()}
+              />
+            )}
           </div>
           <div className="item">
             <NotificationsNoneOutlinedIcon className="icon" />

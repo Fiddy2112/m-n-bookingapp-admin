@@ -16,6 +16,7 @@ function Home() {
         <div className="homeWidgets">
           <Widget />
           <Widget />
+          <Widget type="negative" />
           <Widget />
         </div>
         <div className="homeCharts">

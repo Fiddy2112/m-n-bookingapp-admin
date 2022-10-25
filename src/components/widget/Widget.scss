@@ -1,0 +1,63 @@
+.widget {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  padding: 10px;
+  height: 100px;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  border-radius: 10px;
+  &Left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .title {
+      font-weight: 500;
+      font-size: 15px;
+      color: #747d8c;
+    }
+
+    .counter {
+      font-size: 30px;
+      font-weight: 400;
+      color: #2f3542;
+    }
+
+    .link {
+      width: max-content;
+      font-size: 13px;
+      font-weight: 500;
+      color: #57606f;
+      border-bottom: 1px solid gray;
+    }
+  }
+
+  &Right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .icon {
+      font-size: 20px;
+      padding: 5px;
+      border-radius: 5px;
+      align-items: flex-end;
+      align-self: end;
+      color: #ff4757;
+      background-color: rgba(252, 1, 22, 0.267);
+    }
+  }
+
+  &Percent {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    &.positive {
+      color: #2ed573;
+    }
+
+    &.negative {
+      color: #ff4757;
+    }
+  }
+}

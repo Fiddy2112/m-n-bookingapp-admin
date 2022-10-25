@@ -12,9 +12,16 @@ import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import AccountBoxOutlinedIcon from "@mui/icons-material/AccountBoxOutlined";
 import InputOutlinedIcon from "@mui/icons-material/InputOutlined";
+import { useDarkModeProvider } from "../../context/DarkModeProvider";
+import { actionType } from "../../context/DarkModeReducer";
 import "./Sidebar.scss";
 
 function Sidebar() {
+  const { darkMode, dispatch } = useDarkModeProvider();
+  console.log(darkMode);
+
+  console.log(dispatch);
+
   return (
     <div className="sidebar">
       <div className="sidebarTop">
@@ -22,7 +29,7 @@ function Sidebar() {
           <span className="logo">Booking App</span>
         </Link>
       </div>
-      <hr />
+
       <div className="sidebarCenter">
         <ul>
           {/* Main */}
@@ -92,8 +99,14 @@ function Sidebar() {
         </ul>
       </div>
       <div className="sidebarBottom">
-        <div className="colorOption"></div>
-        <div className="colorOption"></div>
+        <div
+          className="colorOption"
+          onClick={() => dispatch({ type: actionType.SET_LIGHT })}
+        ></div>
+        <div
+          className="colorOption"
+          onClick={() => dispatch({ type: actionType.SET_DARK })}
+        ></div>
       </div>
     </div>
   );
